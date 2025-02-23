@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأكلات الصحية</title>
+  <link rel="stylesheet" href="styles1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+   <!-- Footer Navbar -->
+  <footer class="footer-navbar">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="favorites.html"><i class="fas fa-star"></i> المفضلة</a></li>
+        <li><a href="instant.html"><i class="fas fa-coffee"></i> المشروبات الفورية</a></li>
+        <li><a href="popular.html"><i class="fas fa-fire"></i> الأكلات الشعبية</a></li>
+      </ul>
+      </ul>
+    </nav>
+  </footer>
+ 
+<body>
+  <!-- Header -->
+  <header>
+       <div class="ad-banner">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+    <div class="shape-decor"></div>
+    <div class="logo">
+      <img src="/images/logo.png" alt="Logo" />
+      <h1>استكشاف الوصفات</h1>
+    </div>
+    
+  </header>
+   <!-- Search and Filter -->
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="ابحث عن وصفة..." />
+    </div>
+       <div class="filter-options">
+      <label><input type="checkbox" value="breakfast" /> إفطار</label>
+      <label><input type="checkbox" value="lunch" /> غداء</label>
+      <label><input type="checkbox" value="dinner" /> عشاء</label>
+    </div>
+    <div id="recipeList"></div>
+
+  <!-- Content -->
+  <div class="container">
+    <h2> ْالأكلات الصحية  ْ </h2>
+    <div id="healthyRecipes"></div>
+  </div>
+   <div class="ad-banner">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+
+  <script>
+// قائمة الوصفات الرئيسية
+const recipes = [
+  {
+    id: 1,
+    name: "سلطة الخضروات",
+    description: "سلطة طازجة ومغذية.",
+    image: "images/salad.png",
+    category: ["healthy", "vegan"],
+    mealType: "lunch",
+    quantities: `
+      - 2 كوب خس مقطعة
+      - 1 كوب طماطم مقطعة
+      - 1 كوب خيار مقطع
+      - 1/2 كوب زيتون أسود
+      - 2 ملعقة كبيرة صلصة الزيتون
+      - 1 ملعقة صغيرة ملح
+      - 1/2 ملعقة صغيرة فلفل أسود
+    `,
+    preparation: "1. قم بتجهيز المكونات. 2. اخلطها معًا. 3. أضف التوابل.",
+    time: "15 دقائق",
+    servings: "4 أشخاص"
+  },
+  {
+    id: 2,
+    name: "الدجاج المشوي",
+    description: "طبق لذيذ وسهل التحضير.",
+    image: "images/kfc.png",
+    category: ["quick", "healthy"],
+    mealType: "dinner",
+    quantities: `
+      - 500 جرام صدور دجاج مقطعة
+      - 2 ملعقة كبيرة صلصة الصويا
+      - 1 ملعقة صغيرة عصير ليمون
+      - 1 ملعقة صغيرة بهارات مشكلة
+      - 1/2 ملعقة صغيرة ملح
+      - 1/4 ملعقة صغيرة فلفل أسود
+    `,
+    preparation: "1. قم بتتبيل الدجاج. 2. شويه في الفرن لمدة 25 دقيقة.",
+    time: "30 دقائق",
+    servings: "6 أشخاص"
+  },
+  {
+    id: 3,
+    name: "حساء العدس",
+    description: "حساء دافئ ومغذي.",
+    image: "images/عدس.png",
+    category: ["healthy", "vegan"],
+    mealType: "breakfast",
+    quantities: `
+      - 1 كوب عدس مغسول
+      - 1 بصلة مفرومة
+      - 2 ملعقة كبيرة زيت زيتون
+      - 1 كوب طماطم مقطعة
+      - 1/2 ملعقة صغيرة بهارات مشكلة
+      - 1 ملعقة صغيرة ملح
+      - 1/2 ملعقة صغيرة فلفل أسود
+      - 3 أكواب ماء
+    `,
+    preparation: "1. اقلي البصل حتى يصبح ذهبيًا. 2. أضيفي العدس والماء. 3. اتركيه حتى ينضج.",
+    time: "45 دقائق",
+    servings: "5 أشخاص"
+  },
+  {
+    id: 14,
+    name: "شوربة الخضار",
+    description: "شوربة خفيفة ومغذية.",
+    image: "/images/sop.png",
+    category: ["healthy"],
+    mealType: "lunch",
+    quantities: `
+      - 2 كوب خضار متنوع (جزر، بطاطس، بصل)
+      - 3 أكواب ماء
+      - 1 ملعقة صغيرة بهارات مشكلة
+      - ملح وفلفل أسود حسب الحاجة
+    `,
+    preparation: "1. قم بطهي الخضار مع الماء والبهارات. 2. اترك الشوربة حتى تنضج. 3. قدمها ساخنة.",
+    time: "35 دقائق",
+    servings: "4 أشخاص"
+  }
+];
+
+// تصفية الوصفات الصحية
+const healthyRecipes = recipes.filter(recipe => recipe.category.includes("healthy"));
+
+// دالة عرض الوصفات
+function renderRecipes(filteredRecipes) {
+  const containerId = document.querySelector("[id$='Recipes']");
+  if (!containerId) return;
+
+  containerId.innerHTML = ""; // تفريغ العناصر السابقة
+  filteredRecipes.forEach(recipe => {
+    const card = document.createElement("div");
+    card.className = "recipe-card";
+    card.dataset.id = recipe.id;
+    card.innerHTML = `
+      <img src="${recipe.image}" alt="${recipe.name}" />
+      <h3>${recipe.name}</h3>
+      <p>${recipe.description}</p>
+      <button class="favorite-btn">أضف إلى المفضلة</button>
+    `;
+    containerId.appendChild(card);
+
+    // إضافة الوظائف لزر المفضلة
+    const favoriteBtn = card.querySelector(".favorite-btn");
+    const isFavorited = JSON.parse(localStorage.getItem("favorites")) || [];
+    if (isFavorited.includes(recipe.id)) {
+      favoriteBtn.classList.add("favorited");
+    }
+
+    favoriteBtn.addEventListener("click", () => {
+      let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      if (favorites.includes(recipe.id)) {
+        favoriteBtn.classList.remove("favorited");
+        favorites = favorites.filter(favId => favId !== recipe.id);
+      } else {
+        favoriteBtn.classList.add("favorited");
+        favorites.push(recipe.id);
+      }
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    });
+
+    // تحويل المستخدم إلى صفحة التفاصيل عند النقر على البطاقة
+    card.addEventListener("click", () => {
+      window.location.href = `recipe.html?id=${recipe.id}`;
+    });
+  });
+}
+
+// استدعاء الدالة لعرض الوصفات الصحية
+renderRecipes(healthyRecipes);
+  </script>
+  
+</body>
+
+</html>

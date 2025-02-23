@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طريقة عمل {{وصفات صحيه و اكلات شعبيه و مشهوره و مشروبات فريش و فوريه }} - Fit & Fresh</title>
+  
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="خطوات تحضير وصفات صحيه و اكلات شعبيه و مشهوره و مشروبات فريش و فوريه} بالتفصيل مع مكوناتهات الطبخح تقديمها من Fit & Fresh">
+  <meta name="keywords" content="{{اسم الوصفة}}, وصفات صحيه و اكلات شعبيه و مشهوره و مشروبات فريش و فوريه الوصفة}}, طريقة التحضير, مكونات الطبخ">
+  <meta name="author" content="Fit & Fresh">
+  <link rel="canonical" href="https://www.fitandfresh.com/recipes/{{رابط-الوصفة}}">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="طريقة عمل {{اسم الوصفة}} - Fit & Fresh">
+  <meta property="og:description" content="وصفة {{اسم الوصفة}} الشهية بخطوات مبسطة وصور توضيحية">
+  <meta property="og:image" content="https://www.fitandfresh.com/images/recipes/{{صورة-الوصفة}}.jpg">
+  <meta property="og:url" content="https://www.fitandfresh.com/recipes/{{رابط-الوصفة}}">
+  <meta property="og:type" content="article">
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="طريقة عمل {{اسم الوصفة}} - Fit & Fresh">
+  <meta name="twitter:description" content="وصفة {{اسم الوصفة}} الشهية بخطوات مبسطة وصور توضيحية">
+  <meta name="twitter:image" content="https://www.fitandfresh.com/images/recipes/{{صورة-الوصفة}}.jpg">
+  
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="stys.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+  <style>
+  /* Details Container */
+.details-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.details-container img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.details-container iframe {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 1rem;
+}
+
+.details-container h2 {
+  color: #4CAF50;
+  margin-top: 0;
+}
+
+.details-container h3 {
+  color: #4CAF50;
+  margin-top: 1rem;
+}
+
+.details-container pre {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-family: monospace;
+  line-height: 1.5;
+}
+
+/* Favorite Button */
+.favorite-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.favorite-btn:hover {
+  background-color: #FFC107;
+  transform: scale(1.05);
+}
+
+.favorite-btn.favorited {
+  background-color: red;
+}
+
+.favorite-btn.favorited i {
+  animation: heartBeat 1s ease-in-out;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 1rem 0;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: spin 5s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo h1 {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  color: #4CAF50;
+  text-shadow: 0 0 10px #FFC107;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .details-container {
+    max-width: 90%; /* Wider container for smaller screens */
+    margin: 1rem auto;
+    padding: 0.5rem;
+  }
+
+  .details-container img {
+    height: 200px; /* Smaller image height */
+  }
+
+  .details-container iframe {
+    height: 200px; /* Smaller iframe height */
+  }
+
+  .details-container h2 {
+    font-size: 1.5rem; /* Smaller heading size */
+  }
+
+  .details-container h3 {
+    font-size: 1.2rem; /* Smaller subheading size */
+  }
+
+  .details-container pre {
+    font-size: 0.8rem; /* Smaller font size for code/pre */
+  }
+
+  .favorite-btn {
+    font-size: 0.8rem; /* Smaller button text */
+    padding: 0.4rem 0.8rem;
+  }
+
+  .logo h1 {
+    font-size: 1.2rem; /* Smaller logo text */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .details-container {
+    max-width: 90%; /* Slightly wider container for tablets */
+    margin: 1.5rem auto;
+    padding: 1rem;
+  }
+
+  .details-container img {
+    height: 250px; /* Medium image height */
+  }
+
+  .details-container iframe {
+    height: 250px; /* Medium iframe height */
+  }
+
+  .details-container h2 {
+    font-size: 1.8rem; /* Medium heading size */
+  }
+
+  .details-container h3 {
+    font-size: 1.4rem; /* Medium subheading size */
+  }
+
+  .details-container pre {
+    font-size: 0.9rem; /* Medium font size for code/pre */
+  }
+
+  .favorite-btn {
+    font-size: 0.9rem; /* Medium button text */
+    padding: 0.5rem 1rem;
+  }
+
+  .logo h1 {
+    font-size: 1.5rem; /* Medium logo text */
+  }
+}
+
+@media (min-width: 1025px) {
+  .details-container {
+    max-width: 800px; /* Fixed width for desktops */
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  .details-container img {
+    height: 300px; /* Larger image height */
+  }
+
+  .details-container iframe {
+    height: 300px; /* Larger iframe height */
+  }
+
+  .details-container h2 {
+    font-size: 2rem; /* Larger heading size */
+  }
+
+  .details-container h3 {
+    font-size: 1.6rem; /* Larger subheading size */
+  }
+
+  .details-container pre {
+    font-size: 1rem; /* Larger font size for code/pre */
+  }
+
+  .favorite-btn {
+    font-size: 1rem; /* Larger button text */
+    padding: 0.5rem 1rem;
+  }
+
+  .logo h1 {
+    font-size: 2rem; /* Larger logo text */
+  }
+}
+  </style>
+ 
+  <!-- Header -->
+  <header>
+    <div class="shape-decor"></div>
+    <div class="logo">
+      <img src="/images/logo.png" alt="Logo" />
+      <h1>استكشاف الوصفات</h1>
+    </div>
+  </header>
+
+  <!-- Recipe Details -->
+  <div class="details-container" id="recipeDetails"></div>
+
+  <!-- Footer -->
+  
+  <div class="ad-banner">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  <script>
+    // قائمة الوصفات
+    const recipes = [
+      {
+        id: 1,
+    name: "سلطة الخضروات",
+    description: "سلطة طازجة ومغذية.",
+    image: "/images/salad.png",
+    category: ["healthy", "vegan"],
+    mealType: "lunch",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 2 كوب خس مقطعة
+      - 1 كوب طماطم مقطعة
+      - 1 كوب خيار مقطع
+      - 1/2 كوب زيتون أسود
+      - 2 ملعقة كبيرة صلصة الزيتون
+      - 1 ملعقة صغيرة ملح
+      - 1/2 ملعقة صغيرة فلفل أسود
+    `,
+    preparation: "1. قم بتجهيز المكونات. 2. اخلطها معًا. 3. أضف التوابل.",
+    time: "15 دقائق",
+    servings: "4 أشخاص"
+  },
+  {
+    id: 2,
+    name: "الدجاج المشوي",
+    description: "طبق لذيذ وسهل التحضير.",
+    image: "/images/kfc.png",
+    category: ["quick", "healthy"],
+    mealType: "dinner",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 500 جرام صدور دجاج مقطعة
+      - 2 ملعقة كبيرة صلصة الصويا
+      - 1 ملعقة صغيرة عصير ليمون
+      - 1 ملعقة صغيرة بهارات مشكلة
+      - 1/2 ملعقة صغيرة ملح
+      - 1/4 ملعقة صغيرة فلفل أسود
+    `,
+    preparation: "1. قم بتتبيل الدجاج. 2. شويه في الفرن لمدة 25 دقيقة.",
+    time: "30 دقائق",
+    servings: "6 أشخاص"
+  },
+  {
+    id: 3,
+    name: "المكرونة بالجبن",
+    description: "وجبة سريعة ولذيذة.",
+    image: "/images/mak.png",
+    category: ["quick"],
+    mealType: "lunch",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 250 جرام مكرونة
+      - 100 جرام جبن موزاريلا مبشور
+      - 1/2 كوب كريمة حامضة
+      - 1 ملعقة صغيرة ملح
+      - 1/2 ملعقة صغيرة فلفل أسود
+      - 1/2 كوب صلصة الطماطم
+    `,
+    preparation: "1. اطبخ المكرونة. 2. أضف الجبن والصلصة. 3. اخبز في الفرن.",
+    time: "20 دقائق",
+    servings: "3 أشخاص"
+  },
+  {
+    id: 4,
+    name: "حساء العدس",
+    description: "حساء دافئ ومغذي.",
+    image: "/images/عدس.png",
+    category: ["healthy", "vegan"],
+    mealType: "breakfast",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 1 كوب عدس مغسول
+      - 1 بصلة مفرومة
+      - 2 ملعقة كبيرة زيت زيتون
+      - 1 كوب طماطم مقطعة
+      - 1/2 ملعقة صغيرة بهارات مشكلة
+      - 1 ملعقة صغيرة ملح
+      - 1/2 ملعقة صغيرة فلفل أسود
+      - 3 أكواب ماء
+    `,
+    preparation: "1. اقلي البصل حتى يصبح ذهبيًا. 2. أضيفي العدس والماء. 3. اتركيه حتى ينضج.",
+    time: "45 دقائق",
+    servings: "5 أشخاص"
+  },
+  {
+    id: 5,
+    name: "كعك الشوكولاتة",
+    description: "كعكة لذيذة مليئة بالشوكولاتة.",
+    image: "/images/كيكه.png",
+    category: ["dessert"],
+    mealType: "dinner",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 2 كوب دقيق
+      - 1 1/2 كوب سكر
+      - 3 بيضات
+      - 1 كوب شوكولاتة مذابة
+      - 1/2 كوب زبدة مذابة
+      - 1 ملعقة صغيرة خميرة
+      - 1/2 ملعقة صغيرة ملح
+    `,
+    preparation: "1. اخلطي المكونات معًا. 2. اخبزيها في الفرن لمدة 30 دقيقة.",
+    time: "40 دقائق",
+    servings: "8 أشخاص"
+  },
+  {
+    id: 6,
+    name: "سمبوسة اللحم",
+    description: "طبق شرقي تقليدي ولذيذ.",
+    image: "/images/سمبوسه.png",
+    category: ["snack"],
+    mealType: "lunch",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 250 جرام عجين السمبوسة
+      - 200 جرام لحم مفروم
+      - 1 بصلة مفرومة
+      - 1 ملعقة صغيرة بهارات مشكلة
+      - 1/2 ملعقة صغيرة ملح
+      - 1/4 ملعقة صغيرة فلفل أسود
+      - زيت للقلي
+    `,
+    preparation: "1. اعدي الحشوة من اللحم المفروم. 2. ضعيها داخل العجين. 3. اقليها حتى تصبح ذهبية.",
+    time: "35 دقائق",
+    servings: "4 أشخاص"
+    },
+    {
+        id: 7,
+        name: "عصير البرتقال الطازج",
+        description: "مشروب طازج ومغذي.",
+        image: "/images/or.png",
+        category: ["instant"],
+        mealType: "drink",
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        quantities: `
+          - 4 حبات برتقال طازج
+          - 1/2 كوب ماء
+          - 2 ملعقة صغيرة عسل (اختياري)
+          - مكعبات ثلج (حسب الرغبة)
+        `,
+        preparation: "1. اعصر البرتقال حتى تحصل على العصير. 2. أضف الماء والعسل إذا كنت تحتاجه. 3. قم بتبريد العصير باستخدام مكعبات الثلج.",
+        time: "5 دقائق",
+        servings: "2 أشخاص"
+      },
+      {
+        id: 8,
+        name: "موكتا بنكهة الشوكولاتة",
+        description: "مشروب دافئ مليء بالنكهة.",
+        image: "/images/sh.png",
+        category: ["instant"],
+        mealType: "drink",
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        quantities: `
+          - 2 ملعقة كبيرة بودرة الشوكولاتة
+          - 1 كوب حليب دافئ
+          - 1 ملعقة صغيرة سكر (حسب الرغبة)
+        `,
+        preparation: "1. اخلط بودرة الشوكولاتة مع الحليب الدافئ. 2. أضف السكر إذا كنت تريد. 3. قم بتقديم المشروب ساخناً.",
+        time: "3 دقائق",
+        servings: "1 شخص"
+      },
+      {
+    id: 9,
+    name: "لبن الزبادي بالفواكه",
+    description: "مشروب صحي ولذيذ.",
+    image: "/images/lb.png",
+    category: ["instant", "healthy"],
+    mealType: "drink",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 1 كوب زبادي طبيعي
+      - 1 كوب فواكه طازجة (مانجو، توت، أو أي نوع آخر)
+      - 1 ملعقة صغيرة عسل نحل
+    `,
+    preparation: "1. ضع الزبادي والفواكه في الخلاط الكهربائي. 2. أضف العسل واخلطهم معًا. 3. قم بتقديم المشروب باردًا.",
+    time: "7 دقائق",
+    servings: "2 أشخاص"
+    },
+      {
+    id: 10,
+    name: "الفول المصري",
+    description: "أكلة شعبية مصرية.",
+    image: "/images/fool.png",
+    category: ["popular"],
+    mealType: "breakfast",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 1 كوب فول مجروش
+      - 1 بصلة مفرومة
+      - 2 ملعقة كبيرة زيت
+      - 1 ملعقة صغيرة بهارات مشكلة
+      - ملح وفلفل أسود حسب الحاجة
+    `,
+    preparation: "1. انقع الفول ليلة كاملة. 2. اطبخ الفول مع البهارات. 3. قدمه مع توابل الفول المصرية.",
+    time: "45 دقائق",
+    servings: "4 أشخاص"
+  },
+  {
+    id: 11,
+    name: "كفتة البسطرمة",
+    description: "أكلة شعبية ولذيذة.",
+    image: "/images/kofta.png",
+    category: ["popular"],
+    mealType: "lunch",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 500 جرام لحم مفروم
+      - 1 بصلة مفرومة
+      - 2 ملعقة صغيرة بهارات البسطرمة
+      - 1 ملعقة صغيرة ملح
+      - 1/2 ملعقة صغيرة فلفل أسود
+      - زيت للقلي
+    `,
+    preparation: "1. اعدي الخليط من اللحم المفروم والبهارات. 2. شكلي الكفتة وأضيفيها إلى الزيت الساخن. 3. قدميها مع الأرز أو السلطات.",
+    time: "30 دقائق",
+    servings: "4 أشخاص"
+  },
+  {
+    id: 12,
+    name: "وصفه مبتكرة من اللحم",
+    description: "طبق شرقي تقليدي ولذيذ.",
+    image: "/images/stek.png",
+    category: ["popular"],
+    mealType: "dinner",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 500 جرام لحم مفروم
+      - 2 كوب بازلاء مقطعة
+      - 1 بصلة مفرومة
+      - 2 ملعقة كبيرة صلصة الطماطم
+      - 1 ملعقة صغيرة بهارات مشكلة
+      - ملح وفلفل أسود حسب الحاجة
+    `,
+    preparation: "1. قم بطهي اللحم المفروم مع البصل حتى يصبح ذهبيًا. 2. أضف البازلاء والصلصة. 3. اخبزيها في الفرن لمدة 30 دقيقة.",
+    time: "40 دقائق",
+    servings: "6 أشخاص"
+  },
+  {
+    id: 13,
+    name: "محشي الكوسة",
+    description: "طبق مصري تقليدي مليء بالنكهة.",
+    image: "/images/kosa.png",
+    category: ["popular"],
+    mealType: "dinner",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 6 كوسة متوسطة الحجم
+      - 250 جرام أرز
+      - 1 بصلة مفرومة
+      - 1/2 كوب بقدونس مفروم
+      - 1/2 كوب طماطم مقطعة
+      - ملح وفلفل أسود حسب الحاجة
+    `,
+    preparation: "1. افرغي الكوسا واملأيها بالأرز المخلوط مع البهارات. 2. ضعيها في صينية واسكبي فوقها صلصة الطماطم. 3. اتركيها تطهى على نار هادئة.",
+    time: "50 دقائق",
+    servings: "4 أشخاص"
+  },
+ {
+    id: 14,
+    name: "شوربة الخضار",
+    description: "شوربة خفيفة ومغذية.",
+    image: "/images/sop.png",
+    category: ["healthy"],
+    mealType: "lunch",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 2 كوب خضار متنوع (جزر، بطاطس، بصل)
+      - 3 أكواب ماء
+      - 1 ملعقة صغيرة بهارات مشكلة
+      - ملح وفلفل أسود حسب الحاجة
+    `,
+    preparation: "1. قم بطهي الخضار مع الماء والبهارات. 2. اترك الشوربة حتى تنضج. 3. قدمها ساخنة.",
+    time: "35 دقائق",
+    servings: "4 أشخاص"
+  }
+];
+
+
+
+    // Get recipe ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const recipeId = parseInt(urlParams.get("id"));
+    const selectedRecipe = recipes.find(recipe => recipe.id === recipeId);
+
+    if (selectedRecipe) {
+      const detailsContainer = document.getElementById("recipeDetails");
+      detailsContainer.innerHTML = `
+        <h2>${selectedRecipe.name}</h2>
+        <img src="${selectedRecipe.image}" alt="${selectedRecipe.name}" />
+        <iframe src="${selectedRecipe.video}" frameborder="0" allowfullscreen></iframe>
+        <h3>وصف:</h3>
+        <p>${selectedRecipe.description}</p>
+        <h3>المقادير:</h3>
+        <pre>${selectedRecipe.quantities}</pre>
+        <h3>طريقة التحضير:</h3>
+        <p>${selectedRecipe.preparation}</p>
+        <h3>الوقت اللازم:</h3>
+        <p>${selectedRecipe.time}</p>
+        <h3>عدد الأشخاص:</h3>
+        <p>${selectedRecipe.servings}</p>
+        <button class="favorite-btn">
+          <i class="fas fa-heart"></i> أضف إلى المفضلة
+        </button>
+      `;
+
+      // Favorite button functionality
+      const favoriteBtn = detailsContainer.querySelector(".favorite-btn");
+      const isFavorited = JSON.parse(localStorage.getItem("favorites")) || [];
+      if (isFavorited.includes(selectedRecipe.id)) {
+        favoriteBtn.classList.add("favorited");
+      }
+
+      favoriteBtn.addEventListener("click", () => {
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        if (favorites.includes(selectedRecipe.id)) {
+          favoriteBtn.classList.remove("favorited");
+          favorites = favorites.filter(favId => favId !== selectedRecipe.id);
+        } else {
+          favoriteBtn.classList.add("favorited");
+          favorites.push(selectedRecipe.id);
+        }
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+      });
+    } else {
+      document.body.innerHTML = "<h1 style='text-align: center; margin-top: 50px;'>لم يتم العثور على الوصفة!</h1>";
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الوصفات المفضلة - Fit & Fresh</title>
+  
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="استعرض الوصفات المفضلة لديك على Fit & Fresh. احتفظ بوصفاتك الصحية والشعبية المفضلة في مكان واحد!">
+  <meta name="keywords" content="وصفات مفضلة, وصفات محفوظة, وصفات صحية, Fit & Fresh">
+  <meta name="author" content="Fit & Fresh">
+  <link rel="canonical" href="https://www.fitandfresh.com/favorites">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="الوصفات المفضلة - Fit & Fresh">
+  <meta property="og:description" content="استعرض وصفتك المفضلة المحفوظة على Fit & Fresh">
+  <meta property="og:image" content="https://www.fitandfresh.com/images/favorites-cover.png">
+  <meta property="og:url" content="https://www.fitandfresh.com/favorites">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="الوصفات المفضلة - Fit & Fresh">
+  <meta name="twitter:description" content="استعرض وصفتك المفضلة المحفوظة على Fit & Fresh">
+  <meta name="twitter:image" content="https://www.fitandfresh.com/images/favorites-cover.png">
+  
+  <!-- CSS Links -->
+  <link rel="stylesheet" href=.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+    }
+    
+        /* أنماط صندوق البحث */
+    .search-bar {
+      position: relative;
+      max-width: 78%;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 15px 20px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 50px;
+      outline: none;
+      transition: all 0.3s ease;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-bar input::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+
+    .search-bar input:hover {
+      border-color: #3498db;
+      box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    }
+
+    .search-bar input:focus {
+      border-color: #2ecc71;
+      box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+      background-color: #fff;
+    }
+
+    .search-bar i {
+      position: absolute;
+      left: 40px;
+      top: 40%;
+      transform: translateY(-50%);
+      color: #999;
+      transition: color 0.3s ease;
+    }
+
+    .search-bar input:focus + i {
+      color: #2ecc71;
+    }
+
+    .search-bar input:hover + i {
+      color: #3498db;
+    }
+    header {
+      background-color: #28a745;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .favorite-list {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .favorite-item {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+      padding: 1rem;
+    }
+
+    .favorite-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    
+    /* Styling for the footer navbar */
+footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #28a745;
+      color: white;
+      bottom: 0;
+      width: 100%;
+    }
+    /* Styling for the footer navbar */
+.footer-navbar {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  padding: 0.5rem 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.footer-navbar nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-navbar nav ul li {
+  text-align: center;
+}
+
+.footer-navbar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.footer-navbar nav ul li a:hover,
+.footer-navbar nav ul li a.active {
+  color: #ffd700; /* Gold color for active or hover state */
+}
+
+
+
+
+/* Optional: Add FontAwesome icons for better design */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+  </style>
+</head>
+
+<body>
+
+    <!-- Footer Navbar -->
+  <footer class="footer-navbar">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="healthy.html"><i class="fas fa-heart"></i> الأكلات الصحية</a></li>
+      <li><a href="instant.html"><i class="fas fa-coffee"></i> المشروبات الفورية</a></li>
+        <li><a href="popular.html"><i class="fas fa-fire"></i> الأكلات الشعبية</a></li>
+      </ul>
+      </ul>
+    </nav>
+  </footer>
+  
+  <header>
+  
+    <h1>الوصفات المفضلة</h1>
+    <nav>
+      <div class="ad-banner">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+    </nav>
+  </header>
+        <!-- Search and Filter -->
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="ابحث عن وصفة..." />
+    </div>
+   
+  <div class="favorite-list" id="favoriteList"></div>
+
+  <div class="ad-banner">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+  <script>
+  const recipes = [
+  {
+    id: 1,
+    name: "سلطة الخضروات",
+    description: "سلطة طازجة ومغذية.",
+    image: "/images/salad.png",
+    category: ["healthy", "vegan"],
+    mealType: "lunch",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 2 كوب خس مقطعة
+      - 1 كوب طماطم مقطعة
+      - 1 كوب خيار مقطع
+      - 1/2 كوب زيتون أسود
+      - 2 ملعقة كبيرة صلصة الزيتون
+      - 1 ملعقة صغيرة ملح
+      - 1/2 ملعقة صغيرة فلفل أسود
+    `,
+    preparation: "1. قم بتجهيز المكونات. 2. اخلطها معًا. 3. أضف التوابل.",
+    time: "15 دقائق",
+    servings: "4 أشخاص"
+  },
+  {
+    id: 2,
+    name: "الدجاج المشوي",
+    description: "طبق لذيذ وسهل التحضير.",
+    image: "/images/kfc.png",
+    category: ["quick", "healthy"],
+    mealType: "dinner",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 500 جرام صدور دجاج مقطعة
+      - 2 ملعقة كبيرة صلصة الصويا
+      - 1 ملعقة صغيرة عصير ليمون
+      - 1 ملعقة صغيرة بهارات مشكلة
+      - 1/2 ملعقة صغيرة ملح
+      - 1/4 ملعقة صغيرة فلفل أسود
+    `,
+    preparation: "1. قم بتتبيل الدجاج. 2. شويه في الفرن لمدة 25 دقيقة.",
+    time: "30 دقائق",
+    servings: "6 أشخاص"
+  },
+  {
+    id: 3,
+    name: "المكرونة بالجبن",
+    description: "وجبة سريعة ولذيذة.",
+    image: "/images/mak.png",
+    category: ["quick"],
+    mealType: "lunch",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 250 جرام مكرونة
+      - 100 جرام جبن موزاريلا مبشور
+      - 1/2 كوب كريمة حامضة
+      - 1 ملعقة صغيرة ملح
+      - 1/2 ملعقة صغيرة فلفل أسود
+      - 1/2 كوب صلصة الطماطم
+    `,
+    preparation: "1. اطبخ المكرونة. 2. أضف الجبن والصلصة. 3. اخبز في الفرن.",
+    time: "20 دقائق",
+    servings: "3 أشخاص"
+  },
+  {
+    id: 4,
+    name: "حساء العدس",
+    description: "حساء دافئ ومغذي.",
+    image: "/images/عدس.png",
+    category: ["healthy", "vegan"],
+    mealType: "breakfast",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 1 كوب عدس مغسول
+      - 1 بصلة مفرومة
+      - 2 ملعقة كبيرة زيت زيتون
+      - 1 كوب طماطم مقطعة
+      - 1/2 ملعقة صغيرة بهارات مشكلة
+      - 1 ملعقة صغيرة ملح
+      - 1/2 ملعقة صغيرة فلفل أسود
+      - 3 أكواب ماء
+    `,
+    preparation: "1. اقلي البصل حتى يصبح ذهبيًا. 2. أضيفي العدس والماء. 3. اتركيه حتى ينضج.",
+    time: "45 دقائق",
+    servings: "5 أشخاص"
+  },
+  {
+    id: 5,
+    name: "كعك الشوكولاتة",
+    description: "كعكة لذيذة مليئة بالشوكولاتة.",
+    image: "/images/كيكه.png",
+    category: ["dessert"],
+    mealType: "dinner",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 2 كوب دقيق
+      - 1 1/2 كوب سكر
+      - 3 بيضات
+      - 1 كوب شوكولاتة مذابة
+      - 1/2 كوب زبدة مذابة
+      - 1 ملعقة صغيرة خميرة
+      - 1/2 ملعقة صغيرة ملح
+    `,
+    preparation: "1. اخلطي المكونات معًا. 2. اخبزيها في الفرن لمدة 30 دقيقة.",
+    time: "40 دقائق",
+    servings: "8 أشخاص"
+  },
+  {
+    id: 6,
+    name: "سمبوسة اللحم",
+    description: "طبق شرقي تقليدي ولذيذ.",
+    image: "/images/سمبوسه.png",
+    category: ["snack"],
+    mealType: "lunch",
+    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    quantities: `
+      - 250 جرام عجين السمبوسة
+      - 200 جرام لحم مفروم
+      - 1 بصلة مفرومة
+      - 1 ملعقة صغيرة بهارات مشكلة
+      - 1/2 ملعقة صغيرة ملح
+      - 1/4 ملعقة صغيرة فلفل أسود
+      - زيت للقلي
+    `,
+    preparation: "1. اعدي الحشوة من اللحم المفروم. 2. ضعيها داخل العجين. 3. اقليها حتى تصبح ذهبية.",
+    time: "35 دقائق",
+    servings: "4 أشخاص"
+  },
+  {
+    id: 7,
+    name: "عصير البرتقال الطازج",
+    description: "مشروب طازج ومغذي.",
+    image: "/images/or.png",
+    category: ["instant"],
+    mealType: "drink",
+    quantities: `
+      - 4 حبات برتقال طازج
+      - 1/2 كوب ماء
+      - 2 ملعقة صغيرة عسل (اختياري)
+      - مكعبات ثلج (حسب الرغبة)
+    `,
+    preparation: "1. اعصر البرتقال حتى تحصل على العصير. 2. أضف الماء والعسل إذا كنت تحتاجه. 3. قم بتبريد العصير باستخدام مكعبات الثلج.",
+    time: "5 دقائق",
+    servings: "2 أشخاص"
+  },
+  {
+    id: 8,
+    name: "موكتا بنكهة الشوكولاتة",
+    description: "مشروب دافئ مليء بالنكهة.",
+    image: "/images/sh.png",
+    category: ["instant"],
+    mealType: "drink",
+    quantities: `
+      - 2 ملعقة كبيرة بودرة الشوكولاتة
+      - 1 كوب حليب دافئ
+      - 1 ملعقة صغيرة سكر (حسب الرغبة)
+    `,
+    preparation: "1. اخلط بودرة الشوكولاتة مع الحليب الدافئ. 2. أضف السكر إذا كنت تريد. 3. قم بتقديم المشروب ساخناً.",
+    time: "3 دقائق",
+    servings: "1 شخص"
+  },
+  {
+    id: 9,
+    name: "لبن الزبادي بالفواكه",
+    description: "مشروب صحي ولذيذ.",
+    image: "/images/lb.png",
+    category: ["instant", "healthy"],
+    mealType: "drink",
+    quantities: `
+      - 1 كوب زبادي طبيعي
+      - 1 كوب فواكه طازجة (مانجو، توت، أو أي نوع آخر)
+      - 1 ملعقة صغيرة عسل نحل
+    `,
+    preparation: "1. ضع الزبادي والفواكه في الخلاط الكهربائي. 2. أضف العسل واخلطهم معًا. 3. قم بتقديم المشروب باردًا.",
+    time: "7 دقائق",
+    servings: "2 أشخاص"
+  },
+  // ... المزيد من الوصفات
+];
+
+
+    const favoriteIds = JSON.parse(localStorage.getItem("favorites")) || [];
+    const favoriteRecipes = recipes.filter(recipe => favoriteIds.includes(recipe.id));
+
+    const favoriteList = document.getElementById("favoriteList");
+
+    if (favoriteRecipes.length > 0) {
+      favoriteRecipes.forEach(recipe => {
+        const item = document.createElement("div");
+        item.className = "favorite-item";
+        item.innerHTML = `
+          <h3>${recipe.name}</h3>
+          <img src="${recipe.image}" alt="${recipe.name}" />
+          <p>${recipe.description}</p>
+          <a href="recipe.html?id=${recipe.id}">عرض التفاصيل</a>
+        `;
+        favoriteList.appendChild(item);
+      });
+    } else {
+      favoriteList.innerHTML = "<h2>لا توجد وصفات مفضلة حتى الآن.</h2>";
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>المشروبات الفورية</title>
+  
+</head>
+<style>
+  /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f3e5f5, #e8f5e9);
+  background-size: 200% 200%;
+  animation: gradient 10s ease infinite;
+}
+    
+        /* أنماط صندوق البحث */
+    .search-bar {
+      position: relative;
+      max-width: 78%;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 15px 20px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 50px;
+      outline: none;
+      transition: all 0.3s ease;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-bar input::placeholder {
+      color: #999;
+      font-style: italic;
+    }
+
+    .search-bar input:hover {
+      border-color: #3498db;
+      box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    }
+
+    .search-bar input:focus {
+      border-color: #2ecc71;
+      box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+      background-color: #fff;
+    }
+
+    .search-bar i {
+      position: absolute;
+      left: 40px;
+      top: 40%;
+      transform: translateY(-50%);
+      color: #999;
+      transition: color 0.3s ease;
+    }
+
+    .search-bar input:focus + i {
+      color: #2ecc71;
+    }
+
+    .search-bar input:hover + i {
+      color: #3498db;
+    }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+ h2, h3, h4, h5, h6 {
+  color: #4CAF50;
+  font-weight: bold;
+}
+h1{
+  color:red;
+  font-weight: bold;
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: #4CAF50;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #FFC107;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 1rem 0;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  animation: spin 5s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.logo h1 {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  color: #4CAF50;
+  text-shadow: 0 0 10px #FFC107;
+}
+/* Header */
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header nav a {
+  color: white;
+  margin: 0 1rem;
+  font-size: 1rem;
+}
+
+header nav a:hover {
+  color: #FFC107;
+}
+
+footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #28a745;
+      color: white;
+      bottom: 0;
+      width: 100%;
+    }
+    /* Styling for the footer navbar */
+.footer-navbar {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #28a745;
+  color: white;
+  padding: 0.5rem 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+.footer-navbar nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-navbar nav ul li {
+  text-align: center;
+}
+
+.footer-navbar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.footer-navbar nav ul li a:hover,
+.footer-navbar nav ul li a.active {
+  color: #ffd700; /* Gold color for active or hover state */
+}
+
+
+
+
+/* Optional: Add FontAwesome icons for better design */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+
+/* Recipe Cards */
+.recipe-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.recipe-card h3 {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  color: #4CAF50;
+}
+
+.recipe-card p {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Favorite Button */
+.favorite-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  display: block;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.favorite-btn.favorited {
+  background-color: red;
+}
+
+</style>
+<body>
+          <!-- Footer Navbar -->
+  <footer class="footer-navbar">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active"><i class="fas fa-home"></i> الرئيسية</a></li>
+        <li><a href="favorites.html"><i class="fas fa-star"></i> المفضلة</a></li>
+        <li><a href="healthy.html"><i class="fas fa-heart"></i> الأكلات الصحية</a></li>
+      <li><a href="instant.html"><i class="fas fa-coffee"></i> المشروبات الفورية</a></li>
+        <li><a href="popular.html"><i class="fas fa-fire"></i> الأكلات الشعبية</a></li>
+      </ul>
+      </ul>
+    </nav>
+  </footer>
+  <!-- Header -->
+  <header>
+    <div class="shape-decor"></div>
+    <div class="logo">
+      <img src="logo.png" alt="Logo" />
+      <h1>استكشاف الوصفات</h1>
+    </div>
+ 
+  </header>
+  <!-- Search and Filter -->
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="ابحث عن وصفة..." />
+    </div>
+      <div class="ad-banner">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+    
+  <!-- Content -->
+  <div class="container">
+    <h2>المشروبات الفورية</h2>
+    <div id="instantRecipes"></div>
+  </div>
+   <div class="ad-banner">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-XXXXXXXXXXXXXX"
+         data-ad-slot="XXXXXXXXXX"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
+
+<script>
+  const recipes = [
+  {
+    id: 7,
+    name: "عصير البرتقال الطازج",
+    description: "مشروب طازج ومغذي.",
+    image: "or.png",
+    category: ["instant"],
+    mealType: "drink",
+    quantities: `
+      - 4 حبات برتقال طازج
+      - 1/2 كوب ماء
+      - 2 ملعقة صغيرة عسل (اختياري)
+      - مكعبات ثلج (حسب الرغبة)
+    `,
+    preparation: "1. اعصر البرتقال حتى تحصل على العصير. 2. أضف الماء والعسل إذا كنت تحتاجه. 3. قم بتبريد العصير باستخدام مكعبات الثلج.",
+    time: "5 دقائق",
+    servings: "2 أشخاص"
+  },
+  {
+    id: 8,
+    name: "موكتا بنكهة الشوكولاتة",
+    description: "مشروب دافئ مليء بالنكهة.",
+    image: "sh.png",
+    category: ["instant"],
+    mealType: "drink",
+    quantities: `
+      - 2 ملعقة كبيرة بودرة الشوكولاتة
+      - 1 كوب حليب دافئ
+      - 1 ملعقة صغيرة سكر (حسب الرغبة)
+    `,
+    preparation: "1. اخلط بودرة الشوكولاتة مع الحليب الدافئ. 2. أضف السكر إذا كنت تريد. 3. قم بتقديم المشروب ساخناً.",
+    time: "3 دقائق",
+    servings: "1 شخص"
+  },
+  {
+    id: 9,
+    name: "لبن الزبادي بالفواكه",
+    description: "مشروب صحي ولذيذ.",
+    image: "lb.png",
+    category: ["instant", "healthy"],
+    mealType: "drink",
+    quantities: `
+      - 1 كوب زبادي طبيعي
+      - 1 كوب فواكه طازجة (مانجو، توت، أو أي نوع آخر)
+      - 1 ملعقة صغيرة عسل نحل
+    `,
+    preparation: "1. ضع الزبادي والفواكه في الخلاط الكهربائي. 2. أضف العسل واخلطهم معًا. 3. قم بتقديم المشروب باردًا.",
+    time: "7 دقائق",
+    servings: "2 أشخاص"
+  },
+  // ... المزيد من الوصفات
+];
+
+// Filter and render instant drinks
+const instantRecipes = recipes.filter(recipe => recipe.mealType === "drink");
+
+function renderRecipes(filteredRecipes) {
+  const containerId = document.querySelector("[id$='Recipes']");
+  if (!containerId) return;
+
+  containerId.innerHTML = "";
+  filteredRecipes.forEach(recipe => {
+    const card = document.createElement("div");
+    card.className = "recipe-card";
+    card.dataset.id = recipe.id;
+    card.innerHTML = `
+      <img src="${recipe.image}" alt="${recipe.name}" />
+      <h3>${recipe.name}</h3>
+      <p>${recipe.description}</p>
+      <button class="favorite-btn">أضف إلى المفضلة</button>
+    `;
+    containerId.appendChild(card);
+
+    const favoriteBtn = card.querySelector(".favorite-btn");
+    const isFavorited = JSON.parse(localStorage.getItem("favorites")) || [];
+    if (isFavorited.includes(recipe.id)) {
+      favoriteBtn.classList.add("favorited");
+    }
+
+    favoriteBtn.addEventListener("click", () => {
+      let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+      if (favorites.includes(recipe.id)) {
+        favoriteBtn.classList.remove("favorited");
+        favorites = favorites.filter(favId => favId !== recipe.id);
+      } else {
+        favoriteBtn.classList.add("favorited");
+        favorites.push(recipe.id);
+      }
+      localStorage.setItem("favorites", JSON.stringify(favorites));
+    });
+
+    card.addEventListener("click", () => {
+      window.location.href = `recipe.html?id=${recipe.id}`;
+    });
+  });
+}
+
+// Call the function to render instant drinks
+renderRecipes(instantRecipes);
+</script>
+
+</body>
+
+</html>
